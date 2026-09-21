@@ -18,3 +18,4 @@ Topik halamman saya: personal profile
 ## Catatan penggunaan AI
  
 - pembuatan deskripsi pada bagian about, dan experience
+- pembuatan gambar di bagian eperience
