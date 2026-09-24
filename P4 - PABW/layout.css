@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header h1{
+    margin-left: 1%;
+}
+
+
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-right: 20px;
+  
+    
+}
+
+
+
+main{
+    margin: 20px;
+}

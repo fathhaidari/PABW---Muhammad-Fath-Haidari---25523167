@@ -1,0 +1,50 @@
+/* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
+:root {
+    --black:  black;
+    --white: white;
+ 
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+ 
+  --radius-md: 0.5rem;
+  --shadow-1:  0 1px 3px rgba(0, 0, 0, .10);
+ 
+  --text-sm:  0.875rem;
+  --text-md:  1rem;
+  --text-xl:  1.5rem;
+  --text-3xl: 2.25rem;
+}
+ 
+
+
+header{
+    color: var(--white);
+}
+
+.bold-header{
+    font-weight: 750;
+}
+
+.thin-header{
+    font-weight: 300;
+}
+
+header h1{
+    font-size: 20px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 0px;
+    border-bottom: rgba(255, 255, 255, 0) solid 2px;
+    
+    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+}
+
+.navbar ul li a:hover{
+    border-bottom: white solid 2px;
+}
+
