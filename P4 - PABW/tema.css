@@ -1,9 +1,16 @@
-/* Pengalih tema manual (jika menggunakan checkbox #tema di profil.html) */
-:root:has(#tema:checked) {
-  --color-bg: #0f172a;
-  --color-fg: #e2e8f0;
-  --color-surface: #1e293b;
-  --color-border: #334155;
-  --color-judul: #f8fafc;
-  --color-isi: #cbd5e1;
+/* ============================================================
+   BERKAS: tema.css
+   Fungsi: Mode gelap otomatis murni CSS (tanpa JavaScript)
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Mengubah token warna semantik saat sistem/OS berada di mode gelap */
+    --color-bg: #0f172a;        /* Latar halaman */
+    --color-surface: #1e293b;   /* Latar kartu & elemen */
+    --color-fg: #f8fafc;        /* Teks utama */
+    --color-muted: #94a3b8;     /* Teks sekunder */
+    --color-border: #334155;    /* Pemisah/garis tepi */
+    --color-primary: #ffffff;   /* Aksesibilitas warna utama */
+  }
 }
