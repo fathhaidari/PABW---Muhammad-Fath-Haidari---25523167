@@ -19,3 +19,21 @@ Topik halamman saya: personal profile
  
 - pembuatan deskripsi pada bagian about, dan experience
 - pembuatan gambar di bagian eperience
+
+## Pertemuan 4 — Design token halaman profil
+
+- Berkas gaya yang dibuat: `tokens.css`, `base.css`, `layout.css`, `komponen.css`, `tema.css`
+- Warna utama: `#000000` (hitam), dipilih untuk memberikan kesan minimalis, tegas, dan memiliki kontras yang tinggi terhadap latar belakang.
+
+### Token yang saya tetapkan
+
+| Token | Nilai | Untuk apa |
+| --- | --- | --- |
+| `--color-primary` | `#000000` | Warna utama tombol, header, footer, dan penanda |
+| `--color-fg` | `#0F172A` | Warna teks utama |
+| `--color-bg` | `rgba(0, 0, 0, 0.089)` | Warna latar belakang halaman |
+| `--color-surface` | `#FFFFFF` | Warna latar belakang kartu dan panel |
+| `--radius-md` | `8px` | Sudut membulat pada tombol, kartu, dan isian |
+| `--space-4` | `1rem` | Jarak standar antar elemen |
+
+Kriteria selesai saya: Mengubah `--color-primary` di satu baris akan secara otomatis mengubah warna header, footer, tombol, dan garis fokus di seluruh halaman.
