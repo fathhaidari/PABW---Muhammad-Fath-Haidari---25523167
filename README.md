@@ -37,3 +37,8 @@ Topik halamman saya: personal profile
 | `--space-4` | `1rem` | Jarak standar antar elemen |
 
 Kriteria selesai saya: Mengubah `--color-primary` di satu baris akan secara otomatis mengubah warna header, footer, tombol, dan garis fokus di seluruh halaman.
+
+## Catatan penggunaan AI
+
+- penyesuaian token
+- penyesuaian tema
