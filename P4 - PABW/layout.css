@@ -1,35 +1,75 @@
-body{
-    margin: 0;
+/* HEADER & NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
-header{
-    position: sticky;
-    top: 0;
-    background-color: black;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+header h1 {
+  font-size: 20px;
+  margin-left: 1%;
 }
 
-header h1{
-    margin-left: 1%;
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
 }
 
-
-
-.navbar ul{
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin-right: 20px;
-  
-    
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 5px 0px;
+  border-bottom: rgba(255, 255, 255, 0) solid 2px;
+  transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
 }
 
+.navbar ul li a:hover {
+  border-bottom: var(--white) solid 2px;
+}
 
+/* MAIN & SECTION KARTU */
+main {
+  margin: 20px;
+}
 
-main{
-    margin: 20px;
+.about, .exp, .contact, .message {
+  background-color: var(--white);
+  margin: 20px 50px 30px;
+  padding: 2px 20px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.about h1 {
+  color: var(--color-judul);
+}
+
+.about p {
+  color: var(--color-isi);
+}
+
+.message {
+  background-color: var(--white);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 10px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }

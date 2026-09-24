@@ -1,50 +1,60 @@
-/* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
+/* LAPIS 1 — primitif: nilai mentah murni dari kode asli Anda */
 :root {
-    --black:  black;
-    --white: white;
- 
+  /* Warna Asli Anda */
+  --black: black;
+  --black2: #0f172a;
+  --black3: #334155;
+  --white: white;
+  --abuBg: rgba(0, 0, 0, 0.005);
+
+  /* Warna Detail Asli Anda */
+  --gray-border: #D1D5DB;
+  --gray-border-input: #cbd5e1;
+  --gray-border-table: #e5e7eb;
+  --gray-table-bg: #8687870d;
+  --gray-subtext: #64748b;
+  --gray-caption: #94a3b8;
+
+  /* Spasi & Ukuran Asli Anda */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
   --space-6: 1.5rem;
- 
-  --radius-md: 0.5rem;
-  --shadow-1:  0 1px 3px rgba(0, 0, 0, .10);
- 
-  --text-sm:  0.875rem;
-  --text-md:  1rem;
-  --text-xl:  1.5rem;
+
+  /* Radius Asli Anda */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 20px;
+
+  /* Bayangan Asli Anda */
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, .10);
+  --shadow-card: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  --shadow-table: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-img: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* Tipografi */
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-xl: 1.5rem;
   --text-3xl: 2.25rem;
 }
- 
 
+/* LAPIS 2 — semantik: peran elemen mengacu ke lapis 1 */
+:root {
+  --color-bg: var(--abuBg);
+  --color-section: var(--white);
+  --color-fg: var(--black2);
+  --color-surface: var(--white);
+  --color-border: var(--gray-border);
+  --color-primary: var(--black);
+  --color-danger: #B00020;
+  --color-focus: var(--black);
 
-header{
-    color: var(--white);
+  --color-judul: var(--black2);
+  --color-isi: var(--black3);
+
+  --card-pad: var(--space-4);
+  --section-gap: var(--space-6);
 }
-
-.bold-header{
-    font-weight: 750;
-}
-
-.thin-header{
-    font-weight: 300;
-}
-
-header h1{
-    font-size: 20px;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color: white;
-    padding: 5px 0px;
-    border-bottom: rgba(255, 255, 255, 0) solid 2px;
-    
-    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
-}
-
-.navbar ul li a:hover{
-    border-bottom: white solid 2px;
-}
-

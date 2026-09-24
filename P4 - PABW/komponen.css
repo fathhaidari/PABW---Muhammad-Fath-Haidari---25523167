@@ -1,0 +1,191 @@
+/* EXPERIENCE & TABEL */
+.exp h2 {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-table);
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-border-table);
+}
+
+th {
+  background-color: var(--gray-table-bg);
+  color: var(--black);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: var(--gray-table-bg);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+td:nth-child(1) {
+  font-weight: 600;
+  color: var(--gray-subtext);
+  width: 40px;
+  text-align: center;
+}
+
+td:nth-child(2) {
+  font-weight: 600;
+  color: var(--color-judul);
+  width: 180px;
+}
+
+td:nth-child(3) {
+  color: var(--color-isi);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+td:nth-child(4) {
+  width: 160px;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-img);
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--gray-caption);
+  font-style: italic;
+}
+
+/* KONTAK & FORM */
+.contact-section h2, .contact-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  color: var(--color-isi);
+}
+
+.contact-section ul li {
+  margin-bottom: 8px;
+}
+
+.contact-section ul li p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--black3);
+  text-transform: capitalize;
+}
+
+.contact-section p {
+  margin-bottom: 16px;
+}
+
+.contact-section label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-isi);
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: var(--black2);
+  background-color: var(--white);
+  border: 1px solid var(--gray-border-input);
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-section textarea {
+  min-height: 120px;
+}
+
+.contact-section input[type="text"]:focus,
+.contact-section input[type="email"]:focus,
+.contact-section textarea:focus {
+  border-color: var(--black);
+}
+
+/* TOMBOL SIMPAN */
+.contact-section button[type="submit"] {
+  display: inline-block;
+  padding: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--white);
+  background-color: var(--black);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contact-section button[type="submit"]:hover {
+  background-color: var(--white);
+  color: var(--color-judul);
+  border: 0.1px solid var(--color-isi);
+}
+
+.contact-section button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* PERSYARATAN WORKSHEET LEMBAR E (STATUS FOKUS & VALIDASI) */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}

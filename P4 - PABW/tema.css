@@ -1,0 +1,9 @@
+/* Pengalih tema manual (jika menggunakan checkbox #tema di profil.html) */
+:root:has(#tema:checked) {
+  --color-bg: #0f172a;
+  --color-fg: #e2e8f0;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+  --color-judul: #f8fafc;
+  --color-isi: #cbd5e1;
+}
