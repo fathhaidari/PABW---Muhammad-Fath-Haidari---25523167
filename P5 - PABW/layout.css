@@ -53,7 +53,7 @@ header h1 {
 }
 
 .tema{
-  margin: 0px 10px 0px 30px;
+  margin: 0px 10px 0px 15px;
 }
 
 .pengalih.tema {
@@ -97,14 +97,14 @@ header h1 {
 
 .isi {
   display: grid;
-  grid-template-columns: 40rem 1fr;
+  grid-template-columns: 17rem 1fr;
   gap: var(--space-4);
   margin: 15px;
 }
 
-.about, .exp, .utama-sorotan, .contact, .message {
+.about, .exp, .utama, .contact, .message {
   background-color: var(--white);
-  margin: 5px;
+  margin: 5px;  
   padding: 2px 20px;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
@@ -129,6 +129,16 @@ header h1 {
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--space-4);
   padding: 20px;
+}
+
+.sorotan{
+  grid-column  : 1 / -1; 
+  width: 100%;
+}
+
+#gallery{
+  grid-column: 1 / -1;
+  width: 100%;
 }
 
 /* FOOTER */

@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.page {
+body {
   margin: 0;
   background-color: var(--color-bg);
   font-family:  "Poppins", sans-serif;;
