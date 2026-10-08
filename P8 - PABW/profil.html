@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>worksheet3</title>
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <h1>
+                <span class="bold-header">hydari's</span>   <span class="thin-header">profile</span>
+            </h1>
+            
+            <nav class="navbar ">
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#exp">experience</a></li>
+                    <li><a href="#galeri">gallery</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+                <div class="tema">
+                    <input type="checkbox" id="tema" class="pengalih tema">
+                    <label for="tema" class="tombol-tema">tema</label>
+                </div>
+            </nav>
+
+        </header>
+        <main class="isi">
+            <section id="about">
+                <div class="about">
+                <h2>Muhammad Fath Haidari</h2>
+                <p>Saya Muhammad Fath Haidari, seorang pemimpin di industri teknologi yang berfokus pada arsitektur komputasi tingkat tinggi, strategi AI, dan integrasi ekosistem digital. Kepemimpinan saya berpusat pada penyeimbangan antara performa komputasi ekstrem, kualitas desain produk, dan keandalan sistem berskala besar untuk membangun solusi teknologi masa depan</p>
+                </div>
+            </section>
+
+            
+            <section id="exp">
+                <div class="exp ">
+                    <h2>experience</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                            <th scope="col">no</th>
+                            <th scope="col">company</th>
+                            <th scope="col">description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>NVIDIA Corporation</td>
+                                <td>Sebagai Senior Engineering Manager di NVIDIA, saya mengarahkan tim insinyur dan peneliti terbaik dunia dalam merancang infrastruktur AI berskala besar. Tanggung jawab saya mencakup eksekusi strategi teknis, arsitektur software/hardware, serta pengembangan talenta utama yang membangun fondasi komputasi masa depan.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Apple Inc.</td>
+                                <td>Sebagai Senior Director di Apple, saya memimpin tim lintas disiplin yang merancang dan mengeksekusi teknologi masa depan—mulai dari pengembangan Apple Silicon, sistem operasi, hingga arsitektur produk utama. Saya bertanggung jawab menjaga standar kualitas khas Apple, mendorong terobosan teknis, dan membawa visi produk dari konsep awal hingga ke tangan konsumen.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Microsoft Corporation</td>
+                                <td>Sebagai Senior Director di Microsoft, saya memimpin tim rekayasa (engineering) dalam merancang dan mengeksekusi arsitektur software serta platform cerdas berskala masif. Tanggung jawab utama saya mencakup pengembangan ekosistem cloud (Azure) dan integrasi AI, memastikan standar keandalan tinggi, serta membentuk budaya inovasi di tingkat kepemimpinan teknis.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="gallery" class="utama sorotan">
+                <h2>Gallery</h2>
+                
+                <!-- LEMBAR C: .galeri menggunakan Grid Adaptif -->
+                <div class="galeri">
+                    
+                    <!-- Kartu 1 (dapat class .sorotan jika ingin menonjol di Lembar D) -->
+                    <article class="kartu">
+                        <figure>
+                            <img src="gambarSatu.jpg" alt="NVIDIA Architecture" loading="lazy">
+                            <figcaption>NVIDIA Compute Architecture</figcaption>
+                        </figure>
+                        <div class="kartu__isi">
+                            <h3>Senior Engineering</h3>
+                        </div>
+                        <!-- LEMBAR C.2: .kartu__kaki menggunakan Flexbox -->
+                        <div class="kartu__kaki">
+                            <span>NVIDIA</span>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 2 -->
+                    <article class="kartu">
+                        <figure>
+                            <img src="gambarDua.jpg" alt="Apple Silicon" loading="lazy">
+                            <figcaption>Apple Silicon Chip</figcaption>
+                        </figure>
+                        <div class="kartu__isi">
+                            <h3>Senior director</h3>
+                        </div>
+                        <div class="kartu__kaki">
+                            <span>Apple Inc.</span>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 3 -->
+                    <article class="kartu">
+                        <figure>
+                            <img src="gambarTiga.jpg" alt="Microsoft Azure" loading="lazy">
+                            <figcaption>Azure Cloud Infrastructure</figcaption>
+                        </figure>
+                        <div class="kartu__isi">
+                            <h3>Senior director</h3>
+                        </div>
+                        <div class="kartu__kaki">
+                            <span>Microsoft</span>
+                        </div>
+                    </article>
+
+                    <article class="kartu">
+                        <figure>
+                            <img src="gambarSatu.jpg" alt="NVIDIA Architecture" loading="lazy">
+                            <figcaption>NVIDIA Compute Architecture</figcaption>
+                        </figure>
+                        <div class="kartu__isi">
+                            <h3>Senior Engineering</h3>
+                        </div>
+                        <!-- LEMBAR C.2: .kartu__kaki menggunakan Flexbox -->
+                        <div class="kartu__kaki">
+                            <span>NVIDIA</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+           <section id="contact" class="sisi contact">
+                <h2>Contact</h2>
+                <p class="contact-sub">Click any option below to reach out to me directly.</p>
+
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <span class="contact-label">Instagram</span>
+                        <a href="https://instagram.com/Hydarii_" target="_blank" class="contact-value">@Hydarii_</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:fathhaidari@gmail.com" class="contact-value">fathhaidari@gmail.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Telepon / WhatsApp</span>
+                        <a href="https://wa.me/6289682352087" target="_blank" class="contact-value">0896 8235 2087</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kolom Kanan (1fr) -->
+            <section id="message" class="utama message">
+                <h2>Message</h2>
+                <form action="/simpan" method="post">
+                    <p>
+                        <label for="fullname">fullname</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </p>
+                    <p>
+                        <label for="email">email</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="massage">message</label>
+                        <textarea id="massage" name="massage" required></textarea>
+                    </p>
+                    <button type="submit">simpan</button>
+                </form>
+            </section>
+            
+        </main>
+        <footer>
+            <p>Muhammad Fath Haidari - 25523167 - 2026</p>
+        </footer>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

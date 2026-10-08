@@ -1,0 +1,52 @@
+/* dasar: berlaku di semua lebar (Mobile First) */
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* tablet: galeri dua kolom */
+@media (min-width: 48rem) {
+  .grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* desktop: sidebar bersanding dengan konten */
+@media (min-width: 60rem) {
+  .content { 
+    grid-template-columns: 16rem 1fr; 
+  }
+  .grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+/* Gambar tidak melebihi wadahnya */
+img { 
+  max-width: 100%; 
+  height: auto; 
+}
+
+/* Tabel lebar dapat digulir sendiri */
+.table-wrap { 
+  overflow-x: auto; 
+}
+
+/* Teks mengikuti ukuran huruf pengguna */
+p { 
+  font-size: 1rem; 
+  line-height: 1.6; 
+}
+
+/* Mencegah kolom melebar akibat teks/elemen panjang */
+.grid > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
