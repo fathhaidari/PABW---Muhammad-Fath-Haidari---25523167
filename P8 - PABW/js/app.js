@@ -19,3 +19,29 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
+
+const daftarProyek = [
+  { judul: "Halaman Profil", tahun: 2026, selesai: true },
+  { judul: "Katalog Produk", tahun: 2026, selesai: false },
+  { judul: "Aplikasi Todo List", tahun: 2025, selesai: true }
+];
+
+// Menampilkan data sebagai tabel di Console
+console.table(profil.keahlian);
+console.table(daftarProyek);
+
+// 1. Filter: mengambil proyek yang selesai
+const selesai = daftarProyek.filter((proyek) => proyek.selesai);
+console.table(selesai);
+
+// 2. Find: mencari satu proyek berdasarkan judul
+const katalog = daftarProyek.find((proyek) => proyek.judul === "Katalog Produk");
+console.log(katalog);
+
+// 3. Map: mengubah array objek menjadi array judul saja
+const daftarJudul = daftarProyek.map((proyek) => proyek.judul);
+console.log(daftarJudul);
+
+// 4. Sort memakai salinan array (agar data asli tidak berubah)
+const proyekUrut = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
+console.log(proyekUrut);
