@@ -20,10 +20,40 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
-const daftarProyek = [
-  { judul: "Halaman Profil", tahun: 2026, selesai: true },
-  { judul: "Katalog Produk", tahun: 2026, selesai: false },
-  { judul: "Aplikasi Todo List", tahun: 2025, selesai: true }
+// KUNCI P9: Ditambahkan 'export' dan properti 'kategori', 'deskripsi', & 'gambar'
+export const daftarProyek = [
+  { 
+    judul: "Halaman Profil", 
+    kategori: "NVIDIA", 
+    deskripsi: "Senior Engineering", 
+    gambar: "gambarSatu.jpg", 
+    tahun: 2026, 
+    selesai: true 
+  },
+  { 
+    judul: "Katalog Produk", 
+    kategori: "Apple", 
+    deskripsi: "Apple Silicon Chip", 
+    gambar: "gambarDua.jpg", 
+    tahun: 2026, 
+    selesai: false 
+  },
+  { 
+    judul: "Aplikasi Todo List", 
+    kategori: "Microsoft", 
+    deskripsi: "Azure Cloud Infrastructure", 
+    gambar: "gambarTiga.jpg", 
+    tahun: 2025, 
+    selesai: true 
+  },
+  { 
+    judul: "Halaman Profil", 
+    kategori: "NVIDIA", 
+    deskripsi: "Senior Engineering", 
+    gambar: "gambarSatu.jpg", 
+    tahun: 2026, 
+    selesai: true 
+  }
 ];
 
 // Menampilkan data sebagai tabel di Console
