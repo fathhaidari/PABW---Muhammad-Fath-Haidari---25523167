@@ -1,0 +1,269 @@
+/* EXPERIENCE & TABEL */
+.exp h2 {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-table);
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-border-table);
+}
+
+th {
+  background-color: var(--gray-table-bg);
+  color: var(--black);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: var(--gray-table-bg);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+td:nth-child(1) {
+  font-weight: 600;
+  color: var(--gray-subtext);
+  width: 40px;
+  text-align: center;
+}
+
+td:nth-child(2) {
+  font-weight: 600;
+  color: var(--color-judul);
+  width: 180px;
+}
+
+td:nth-child(3) {
+  color: var(--color-isi);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+td:nth-child(4) {
+  width: 160px;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-img);
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--gray-caption);
+  font-style: italic;
+}
+
+/* KONTAK & FORM */
+/* Teks deskripsi di bawah judul Contact */
+.contact-sub {
+  font-size: 0.875rem;
+  color: var(--gray-caption, #71717a);
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Container daftar kontak */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Jarak antar grup kontak */
+}
+
+/* Setiap item kontak (Label + Nilai tersusun vertikal) */
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* Judul kecil di atas (misal: Instagram, Email) */
+.contact-label {
+  font-size: 0.8rem;
+  color: var(--gray-caption, #71717a);
+  font-weight: 400;
+}
+
+/* Teks utama tebal yang bisa diklik */
+.contact-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-judul, #000000);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-value:hover {
+  opacity: 0.7;
+}
+
+.mesaage label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-isi);
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
+
+.message input[type="text"],
+.message input[type="email"],
+.message textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: var(--black2);
+  background-color: var(--white);
+  border: 1px solid var(--gray-border-input);
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message textarea {
+  min-height: 120px;
+}
+
+.message input[type="text"]:focus,
+.message input[type="email"]:focus,
+.message textarea:focus {
+  border-color: var(--black);
+}
+
+/* TOMBOL SIMPAN */
+.message button[type="submit"] {
+  display: inline-block;
+  padding: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--white);
+  background-color: var(--black);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.message button[type="submit"]:hover {
+  background-color: var(--white);
+  color: var(--color-judul);
+  border: 0.1px solid var(--color-isi);
+}
+
+.message button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* PERSYARATAN WORKSHEET LEMBAR E (STATUS FOKUS & VALIDASI) */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+.kartu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mengumpulkan isi rapat ke atas */
+  gap: var(--space-2, 0.5rem);  /* Jarak antar elemen internal kartu */
+  padding: 1rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  background-color: var(--bg-card, #ffffff);
+  transition: background-color 0.2s ease;
+}
+
+.kartu:hover{
+  background-color: var(--gray-table-bg);
+}
+
+/* 2. Sesuaikan margin atas pada kaki kartu */
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: 0.5rem; /* Diperkecil agar lebih rapat dengan teks di atasnya */
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color, #eee);
+}
+/* LEMBAR C.2 & E.1: Kartu dengan Flexbox & Tinggi Seragam */
+
+.kartu figure {
+  margin: 0 0 0.5rem 0;
+  
+}
+
+.kartu h3{
+  margin-bottom: 0px;
+}
+
+.kartu figure,
+.kartu h4,
+.kartu p {
+  margin: 0;
+  padding: 0;
+}
+
+.kartu img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Agar gambar presisi tidak gepeng */
+  object-position: top;
+  border-radius: 6px;
+}
+
+/* LEMBAR E.2: Mencegah Teks Meluber */
+.kartu__isi {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* LEMBAR C.2: Kaki Kartu Sejajar Horizontal */
+
+/* LEMBAR D.1: Span untuk elemen yang ingin dilebarkan */
+.sorotan {
+  grid-column: span 1;
+}

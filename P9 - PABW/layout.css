@@ -1,0 +1,153 @@
+/* HEADER & NAVBAR */
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+header h1 {
+  font-size: 20px;
+  margin-left: 1%;
+}
+
+.navbar{
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 5px 0px;
+  border-bottom: rgba(255, 255, 255, 0) solid 2px;
+  transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  border-bottom: var(--white) solid 2px;
+}
+
+.tema{
+  margin: 0px 10px 0px 15px;
+}
+
+.pengalih.tema {
+  display: none;
+}
+
+.tombol-tema {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  text-indent: -9999px; /* Menyembunyikan teks 'tema' secara visual */
+  transition: background-color 0.3s ease;
+}
+
+/* Lingkaran Sakelar */
+.tombol-tema::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: #000000;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Efek saat Aktif (Checked) */
+.pengalih.tema:checked + .tombol-tema {
+  background-color: #3a3a3f; /* Warna aksen aktif */
+}
+
+.pengalih.tema:checked + .tombol-tema::after {
+  transform: translateX(22px);
+}
+/* MAIN & SECTION KARTU */
+
+.isi {
+  display: grid;
+  grid-template-columns: 17rem 1fr;
+  gap: var(--space-4);
+  margin: 15px;
+}
+
+.about, .exp, .utama, .contact, .message {
+  background-color: var(--white);
+  margin: 5px;  
+  padding: 2px 20px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.about h1 {
+  color: var(--color-judul);
+}
+
+.about p {
+  color: var(--color-isi);
+}
+
+.message {
+  background-color: var(--white);
+}
+
+
+/* LEMBAR C.1: Galeri Adaptif tanpa Media Query */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+  padding: 20px;
+}
+
+.sorotan{
+  grid-column  : 1 / -1; 
+  width: 100%;
+}
+
+#gallery{
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 10px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

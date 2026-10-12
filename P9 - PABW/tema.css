@@ -1,0 +1,15 @@
+/* ============================================================
+   BERKAS: tema.css
+   Fungsi: Mode gelap otomatis murni CSS (tanpa JavaScript)
+   ============================================================ */
+
+
+  :root:has(#tema:checked) {
+    /* Mengubah token warna semantik saat sistem/OS berada di mode gelap */
+    --color-bg: #3a3a3f;        /* Latar halaman */
+    --color-surface: #1e293b;   /* Latar kartu & elemen */
+    --color-fg: #f8fafc;        /* Teks utama */
+    --color-muted: #94a3b8;     /* Teks sekunder */
+    --color-border: #334155;    /* Pemisah/garis tepi */
+    --color-primary: #ffffff;   /* Aksesibilitas warna utama */
+  }
