@@ -119,22 +119,22 @@
             <!-- Kolom Kanan (1fr) -->
             <section id="message" class="utama message">
                 <h2>Message</h2>
-                <!-- ID #form-kontak (sesuai acuan Lembar A.2 & D.2) -->
+                <!-- Tambahkan id="form-kontak" dan novalidate -->
                 <form id="form-kontak" action="/simpan" method="post" novalidate>
                     <p>
                         <label for="fullname">fullname</label>
                         <input type="text" id="fullname" name="fullname">
-                        <span class="pesan-galat" id="err-fullname" style="color: red; font-size: 0.85rem;"></span>
+                        <span class="pesan-galat" id="err-fullname" style="color: red; font-size: 0.85rem; display: block; margin-top: 4px;"></span>
                     </p>
                     <p>
                         <label for="email">email</label>
                         <input type="email" id="email" name="email">
-                        <span class="pesan-galat" id="err-email" style="color: red; font-size: 0.85rem;"></span>
+                        <span class="pesan-galat" id="err-email" style="color: red; font-size: 0.85rem; display: block; margin-top: 4px;"></span>
                     </p>
                     <p>
                         <label for="massage">message</label>
                         <textarea id="massage" name="massage"></textarea>
-                        <span class="pesan-galat" id="err-massage" style="color: red; font-size: 0.85rem;"></span>
+                        <span class="pesan-galat" id="err-massage" style="color: red; font-size: 0.85rem; display: block; margin-top: 4px;"></span>
                     </p>
                     <button type="submit">simpan</button>
                 </form>
