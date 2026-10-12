@@ -53,6 +53,14 @@ export const daftarProyek = [
     gambar: "gambarSatu.jpg", 
     tahun: 2026, 
     selesai: true 
+  },
+  { 
+    judul: "Katalog Produk", 
+    kategori: "Apple", 
+    deskripsi: "Apple Silicon Chip", 
+    gambar: "gambarDua.jpg", 
+    tahun: 2026, 
+    selesai: false 
   }
 ];
 
