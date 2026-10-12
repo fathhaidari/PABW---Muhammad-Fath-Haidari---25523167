@@ -43,3 +43,31 @@ export function render(daftar) {
 
 // 4. Jalankan render awal
 render(daftarProyek);
+
+// 1. Elemen induk baris filter (pemilih dari Lembar A.2)
+const barisFilter = document.querySelector("#filter");
+
+// 2. Fungsi untuk menandai tombol yang sedang aktif
+function tandaiTombolAktif(tombolAktif) {
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol === tombolAktif);
+  });
+}
+
+// 3. Event Delegation: Satu pendengar dipasang di induk (#filter)
+barisFilter?.addEventListener("click", (event) => {
+  // Cari tombol terdekat dari elemen yang diklik
+  const tombol = event.target.closest("button");
+  if (!tombol) return; // Klik di luar tombol, abaikan
+
+  const kategori = tombol.dataset.kategori;
+
+  // Filter array daftarProyek berdasarkan data-kategori pada tombol
+  const terpilih = daftarProyek.filter(
+    (proyek) => kategori === "semua" || proyek.kategori === kategori
+  );
+
+  // Perbarui tampilan tombol aktif dan gambar ulang daftar kartu
+  tandaiTombolAktif(tombol);
+  render(terpilih);
+});
