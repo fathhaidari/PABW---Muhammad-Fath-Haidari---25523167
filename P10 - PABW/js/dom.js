@@ -1,4 +1,4 @@
-import { daftarProyek } from "./app.js";
+
 
 // --- 1. ELEMEN DOM (Lembar A) ---
 const wadah = document.querySelector("#daftar");

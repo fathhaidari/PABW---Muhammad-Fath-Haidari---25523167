@@ -2,6 +2,10 @@ const namaLengkap = "Muhammad Fath Haidari";
 const peran = "Mahasiswa Informatika";
 const jumlahProyek = 3;
 
+//p10 a5  
+import { ambilProyek } from './api.js';
+ambilProyek().then((daftar) => console.log(daftar));
+
 const profil = {
   nama: namaLengkap,
   peran: peran,

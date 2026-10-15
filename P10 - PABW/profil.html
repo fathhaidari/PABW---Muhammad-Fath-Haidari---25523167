@@ -79,7 +79,7 @@
            <section id="gallery" class="utama sorotan">
                 <h2>Gallery</h2>
                 
-                <!-- ID #filter (sesuai acuan Lembar A.1 & C.1) -->
+                <!-- ID #filter -->
                 <div id="filter" class="baris-filter">
                     <button data-kategori="semua" class="aktif">Semua</button>
                     <button data-kategori="NVIDIA">NVIDIA</button>
@@ -87,10 +87,13 @@
                     <button data-kategori="Microsoft">Microsoft</button>
                 </div>
 
-                <!-- ID #pesan-kosong (sesuai acuan Lembar D.1) -->
+                <!-- ID #muat (DITAMBAHKAN UNTUK P10) -->
+                <p id="muat" hidden>Memuat data...</p>
+
+                <!-- ID #pesan-kosong -->
                 <p id="pesan-kosong" hidden>Tidak ada proyek yang sesuai dengan filter.</p>
 
-                <!-- ID #daftar (sesuai acuan Lembar A.1 & B.1) -->
+                <!-- ID #daftar -->
                 <div id="daftar" class="galeri"></div>
             </section>
 
@@ -119,7 +122,6 @@
             <!-- Kolom Kanan (1fr) -->
             <section id="message" class="utama message">
                 <h2>Message</h2>
-                <!-- Tambahkan id="form-kontak" dan novalidate -->
                 <form id="form-kontak" action="/simpan" method="post" novalidate>
                     <p>
                         <label for="fullname">fullname</label>
@@ -145,6 +147,6 @@
         </footer>
     </div>
     <script type="module" src="js/app.js"></script>
-    <script type="module" src="js/dom.js"></script>
+ 
 </body>
 </html>
