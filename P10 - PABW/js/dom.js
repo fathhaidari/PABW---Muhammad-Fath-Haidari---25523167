@@ -1,18 +1,15 @@
-
-
-// --- 1. ELEMEN DOM (Lembar A) ---
+// --- 1. ELEMEN DOM ---
 const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#pesan-kosong");
+const muatEl = document.querySelector("#muat"); // Baru di P10
 const barisFilter = document.querySelector("#filter");
 
 const formKontak = document.querySelector("#form-kontak");
 const inputFullname = document.querySelector("#fullname");
 const inputEmail = document.querySelector("#email");
 const inputMassage = document.querySelector("#massage");
-const tombolKirim = formKontak?.querySelector("button[type='submit']");
 
-
-// --- 2. FUNGSI BUAT KARTU (Lembar B) ---
+// --- 2. FUNGSI BUAT KARTU ---
 function buatKartu(proyek) {
   const article = document.createElement("article");
   article.className = "kartu";
@@ -20,7 +17,7 @@ function buatKartu(proyek) {
   const figure = document.createElement("figure");
   const img = document.createElement("img");
   img.src = proyek.gambar || "gambarSatu.jpg";
-  img.alt = proyek.judul;
+  img.alt = proyek.judul || "Gambar Proyek";
   img.loading = "lazy";
 
   const figcaption = document.createElement("figcaption");
@@ -31,7 +28,7 @@ function buatKartu(proyek) {
   const kartuIsi = document.createElement("div");
   kartuIsi.className = "kartu__isi";
   const h3 = document.createElement("h3");
-  h3.textContent = proyek.deskripsi;
+  h3.textContent = proyek.deskripsi || proyek.judul;
   kartuIsi.append(h3);
 
   const kartuKaki = document.createElement("div");
@@ -44,48 +41,64 @@ function buatKartu(proyek) {
   return article;
 }
 
+// --- 3. EKSPOR FUNGSI TAMPILAN (P10) ---
 
-// --- 3. POLA RENDER TUNGGAL (Lembar D.1) ---
+// Render daftar kartu atau pesan kosong
 export function render(daftar) {
-  // 1. Kosongkan wadah lebih dulu
-  wadah.textContent = ""; 
+  if (!wadah) return;
+  wadah.textContent = "";
 
-  // 2. Periksa keadaan kosong (jika filter tidak menghasilkan apa pun)
-  if (daftar.length === 0) {
-    if (pesanKosong) pesanKosong.hidden = false;
+  if (!daftar || daftar.length === 0) {
+    if (pesanKosong) {
+      pesanKosong.textContent = "Tidak ada proyek yang sesuai dengan filter.";
+      pesanKosong.hidden = false;
+    }
     return;
   }
 
-  // 3. Jika ada data, sembunyikan pesan kosong & isi ulang wadah
   if (pesanKosong) pesanKosong.hidden = true;
   daftar.forEach((proyek) => wadah.append(buatKartu(proyek)));
 }
 
+// Mengatur status indikator "Memuat data..."
+export function aturMemuat(aktif) {
+  if (muatEl) muatEl.hidden = !aktif;
+}
 
-// --- 4. EVENT DELEGATION FILTER (Lembar C) ---
+// Menampilkan pesan galat pada elemen #pesan-kosong
+export function tampilkanGalat(pesan) {
+  if (wadah) wadah.textContent = "";
+  if (pesanKosong) {
+    pesanKosong.textContent = pesan;
+    pesanKosong.hidden = false;
+  }
+}
+
+// --- 4. EVENT DELEGATION FILTER (P10) ---
 function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle("aktif", tombol === tombolAktif);
   });
 }
 
-barisFilter?.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button");
-  if (!tombol) return;
+// Dibungkus fungsi pasangFilter agar menerima array data dari app.js
+export function pasangFilter(daftar) {
+  if (!barisFilter) return;
+  barisFilter.addEventListener("click", (event) => {
+    const tombol = event.target.closest("button");
+    if (!tombol) return;
 
-  const kategori = tombol.dataset.kategori;
-  const terpilih = daftarProyek.filter(
-    (proyek) => kategori === "semua" || proyek.kategori === kategori
-  );
+    const kategori = tombol.dataset.kategori;
+    const terpilih = daftar.filter(
+      (proyek) => kategori === "semua" || proyek.kategori === kategori
+    );
 
-  tandaiTombolAktif(tombol);
-  render(terpilih);
-});
+    tandaiTombolAktif(tombol);
+    render(terpilih);
+  });
+}
 
-
-// --- 5. VALIDASI FORM INTERAKTIF (Lembar D.2) ---
-
-// Fungsi untuk memeriksa satu kolom dan menampilkan/menyembunyikan pesan galat
+// --- 5. VALIDASI FORM INTERAKTIF (P9) ---
 function validasiKolom(input, idPesan, pesanGalat) {
   const pesanElem = document.querySelector(`#${idPesan}`);
   const nilai = input ? input.value.trim() : "";
@@ -101,39 +114,26 @@ function validasiKolom(input, idPesan, pesanGalat) {
   }
 }
 
-// Validasi langsung saat pengguna mengetik/meninggalkan kolom
 [
   { elem: inputFullname, id: "err-fullname", pesan: "Fullname wajib diisi." },
   { elem: inputEmail, id: "err-email", pesan: "Email wajib diisi." },
   { elem: inputMassage, id: "err-massage", pesan: "Message wajib diisi." }
 ].forEach(({ elem, id, pesan }) => {
-  elem?.addEventListener("input", () => {
-    validasiKolom(elem, id, pesan);
-  });
-  elem?.addEventListener("blur", () => {
-    validasiKolom(elem, id, pesan);
-  });
+  elem?.addEventListener("input", () => validasiKolom(elem, id, pesan));
+  elem?.addEventListener("blur", () => validasiKolom(elem, id, pesan));
 });
 
-// Penanganan submit form (Saat tombol "simpan" diklik)
 formKontak?.addEventListener("submit", (event) => {
-  event.preventDefault(); // PERTAMA: Halaman tidak dimuat ulang (Prevent Default)
+  event.preventDefault();
 
-  // Periksa ketiga kolom sekaligus
   const sahNama = validasiKolom(inputFullname, "err-fullname", "Fullname wajib diisi.");
   const sahEmail = validasiKolom(inputEmail, "err-email", "Email wajib diisi.");
   const sahPesan = validasiKolom(inputMassage, "err-massage", "Message wajib diisi.");
 
-  // Pindahkan fokus ke kolom pertama yang belum diisi dengan benar
   if (!sahNama) { inputFullname?.focus(); return; }
   if (!sahEmail) { inputEmail?.focus(); return; }
   if (!sahPesan) { inputMassage?.focus(); return; }
 
-  // Jika semua kolom sudah valid
   alert("Pesan Anda berhasil dikirim!");
   formKontak.reset();
 });
-
-// --- 6. RENDER AWAL & INISIALISASI ---
-render(daftarProyek);
-periksaSemuaKolom(); // Kunci tombol kirim secara awal jika input masih kosong

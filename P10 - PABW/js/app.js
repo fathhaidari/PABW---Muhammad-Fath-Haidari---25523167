@@ -1,10 +1,10 @@
+// --- 1. IMPOR MODUL (Lembar D.2) ---
+import { ambilProyek } from './api.js';
+import { render, pasangFilter, aturMemuat, tampilkanGalat } from './dom.js';
+
+// --- 2. DATA PROFIL (Tetap dipertahankan dari Pertemuan 8/9) ---
 const namaLengkap = "Muhammad Fath Haidari";
 const peran = "Mahasiswa Informatika";
-const jumlahProyek = 3;
-
-//p10 a5  
-import { ambilProyek } from './api.js';
-ambilProyek().then((daftar) => console.log(daftar));
 
 const profil = {
   nama: namaLengkap,
@@ -13,77 +13,30 @@ const profil = {
   alamat: { kota: "Bekasi" }
 };
 
-// 1. Menyusun kalimat perkenalan dari satu object
 function buatPerkenalan({ nama, peran }) {
   return `${nama} — ${peran}`;
 }
 
-// 2. Merapikan daftar keahlian menjadi satu baris teks
 const formatKeahlian = (daftar) => daftar.join(" · ");
 
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
-
-// KUNCI P9: Ditambahkan 'export' dan properti 'kategori', 'deskripsi', & 'gambar'
-export const daftarProyek = [
-  { 
-    judul: "Halaman Profil", 
-    kategori: "NVIDIA", 
-    deskripsi: "Senior Engineering", 
-    gambar: "gambarSatu.jpg", 
-    tahun: 2026, 
-    selesai: true 
-  },
-  { 
-    judul: "Katalog Produk", 
-    kategori: "Apple", 
-    deskripsi: "Apple Silicon Chip", 
-    gambar: "gambarDua.jpg", 
-    tahun: 2026, 
-    selesai: false 
-  },
-  { 
-    judul: "Aplikasi Todo List", 
-    kategori: "Microsoft", 
-    deskripsi: "Azure Cloud Infrastructure", 
-    gambar: "gambarTiga.jpg", 
-    tahun: 2025, 
-    selesai: true 
-  },
-  { 
-    judul: "Halaman Profil", 
-    kategori: "NVIDIA", 
-    deskripsi: "Senior Engineering", 
-    gambar: "gambarSatu.jpg", 
-    tahun: 2026, 
-    selesai: true 
-  },
-  { 
-    judul: "Katalog Produk", 
-    kategori: "Apple", 
-    deskripsi: "Apple Silicon Chip", 
-    gambar: "gambarDua.jpg", 
-    tahun: 2026, 
-    selesai: false 
-  }
-];
-
-// Menampilkan data sebagai tabel di Console
 console.table(profil.keahlian);
-console.table(daftarProyek);
 
-// 1. Filter: mengambil proyek yang selesai
-const selesai = daftarProyek.filter((proyek) => proyek.selesai);
-console.table(selesai);
+// --- 3. FUNGSI PERAKIT UTAMA (Lembar D.2) ---
+async function muat() {
+  aturMemuat(true); // 1. Tampilkan status "Memuat data..."
+  try {
+    const daftar = await ambilProyek(); // 2. Ambil data async dari api.js
+    pasangFilter(daftar);               // 3. Pasang event listener filter menggunakan data jaringan
+    render(daftar);                     // 4. Render kartu ke halaman
+  } catch (galat) {
+    tampilkanGalat('Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.');
+    console.error(galat.message);
+  } finally {
+    aturMemuat(false); // 5. Sembunyikan status "Memuat data..."
+  }
+}
 
-// 2. Find: mencari satu proyek berdasarkan judul
-const katalog = daftarProyek.find((proyek) => proyek.judul === "Katalog Produk");
-console.log(katalog);
-
-// 3. Map: mengubah array objek menjadi array judul saja
-const daftarJudul = daftarProyek.map((proyek) => proyek.judul);
-console.log(daftarJudul);
-
-// 4. Sort memakai salinan array (agar data asli tidak berubah)
-const proyekUrut = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
-console.log(proyekUrut);
+// --- 4. JALANKAN SAAT HALAMAN DIBUKA ---
+muat();
