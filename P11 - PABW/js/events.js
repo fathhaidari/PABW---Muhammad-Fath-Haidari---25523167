@@ -1,8 +1,8 @@
 // js/events.js
-import { pilihKategori } from './state.js';
+import { pilihKategori, tambahFavorit } from './state.js';
 
 export function pasangPendengar() {
-  // 1. Delegasi Event Filter Kategori
+  // 1. Filter Kategori
   const barisFilter = document.querySelector("#filter");
   if (barisFilter) {
     barisFilter.addEventListener("click", (event) => {
@@ -12,7 +12,18 @@ export function pasangPendengar() {
     });
   }
 
-  // 2. Validasi Form Kontak
+  // --- TAMBAHAN LEMBAR C: Klik Tombol Favorit (Delegasi Event) ---
+  const wadahDaftar = document.querySelector("#daftar");
+  if (wadahDaftar) {
+    wadahDaftar.addEventListener("click", (event) => {
+      const tombolFav = event.target.closest(".favorit");
+      if (!tombolFav) return;
+      const id = Number(tombolFav.dataset.id) || tombolFav.dataset.id;
+      tambahFavorit(id);
+    });
+  }
+
+  // Validasi Form Kontak
   pasangValidasiForm();
 }
 

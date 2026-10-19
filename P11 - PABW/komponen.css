@@ -267,3 +267,20 @@ textarea:user-invalid {
 .sorotan {
   grid-column: span 1;
 }
+
+/* Style Tombol Favorit Berbentuk Hati Bulat */
+/* Tombol Favorit Simpel */
+.favorit {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff3b30; /* Warna merah */
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.favorit:hover {
+  transform: scale(1.15);
+}
