@@ -1,5 +1,5 @@
-// js/events.js
-import { pilihKategori, tambahFavorit } from './state.js';
+// js/events.js (Tambahkan di dalam fungsi pasangPendengar)
+import { pilihKategori, tambahFavorit, aturUlang } from './state.js';
 
 export function pasangPendengar() {
   // 1. Filter Kategori
@@ -12,7 +12,7 @@ export function pasangPendengar() {
     });
   }
 
-  // --- TAMBAHAN LEMBAR C: Klik Tombol Favorit (Delegasi Event) ---
+  // 2. Klik Tombol Favorit
   const wadahDaftar = document.querySelector("#daftar");
   if (wadahDaftar) {
     wadahDaftar.addEventListener("click", (event) => {
@@ -20,6 +20,14 @@ export function pasangPendengar() {
       if (!tombolFav) return;
       const id = Number(tombolFav.dataset.id) || tombolFav.dataset.id;
       tambahFavorit(id);
+    });
+  }
+
+  // --- TAMBAHAN LEMBAR D: Tombol Atur Ulang ---
+  const tombolAturUlang = document.querySelector("#atur-ulang");
+  if (tombolAturUlang) {
+    tombolAturUlang.addEventListener("click", () => {
+      aturUlang();
     });
   }
 

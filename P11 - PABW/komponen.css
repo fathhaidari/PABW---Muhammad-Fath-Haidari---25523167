@@ -284,3 +284,30 @@ textarea:user-invalid {
 .favorit:hover {
   transform: scale(1.15);
 }
+
+/* Styling Tombol Atur Ulang Bulat Biru */
+#atur-ulang {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #000000; /* Warna biru bulat */
+  color: #ffffff;            /* Warna ikon putih */
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+ 
+  transition: transform 0.25s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 0;
+  margin-left: 8px;
+}
+
+#atur-ulang:hover {
+  background-color: #ff1919;
+  transform: rotate(180deg) scale(1.08); /* Efek memutar saat di-hover */
+}
+
+#atur-ulang:active {
+  transform: scale(0.92);
+}
