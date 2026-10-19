@@ -24,12 +24,14 @@ export function simpan(state) {
 export function muat() {
   try {
     const isi = JSON.parse(localStorage.getItem(KUNCI));
+    // Jika versi skema tidak cocok (skema lama), buang simpanan dan gunakan nilai bawaan
     if (isi?.versi !== VERSI) {
       localStorage.removeItem(KUNCI);
       return null;
     }
     return isi;
   } catch {
+    // Jika JSON rusak / tidak sah, buang simpanan dan gunakan nilai bawaan
     localStorage.removeItem(KUNCI);
     return null;
   }
