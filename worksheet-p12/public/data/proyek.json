@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "judul": "NVIDIA AI Architecture",
+    "kategori": "NVIDIA",
+    "deskripsi": "Infrastruktur AI berskala besar.",
+    "gambar": "/gambarSatu.jpg"
+  },
+  {
+    "id": "2",
+    "judul": "Apple Silicon M5",
+    "kategori": "Apple",
+    "deskripsi": "Arsitektur chip komputasi masa depan.",
+    "gambar": "/gambarDua.jpg"
+  },
+  {
+    "id": "3",
+    "judul": "Microsoft Azure Cloud",
+    "kategori": "Microsoft",
+    "deskripsi": "Ekosistem cloud dan integrasi AI.",
+    "gambar": "/gambarTiga.jpg"
+  }
+]
